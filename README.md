@@ -31,6 +31,7 @@ If you publish a GitHub release with the DMG, users can install via:
 ```bash
 brew tap manojkumar-kasiviswanathan/dayrally
 brew install --cask dayrally
+xattr -dr com.apple.quarantine /Applications/DayRally.app
 ```
 
 ## Workspace
