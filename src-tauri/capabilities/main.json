@@ -1,0 +1,17 @@
+{
+  "capabilities": [
+    {
+      "identifier": "main",
+      "description": "Main window permissions for DayRally",
+      "windows": ["*"],
+      "permissions": [
+        "core:default",
+        "dialog:default",
+        "notification:default",
+        "clipboard-manager:allow-write-text",
+        "clipboard-manager:allow-write-html",
+        "dayrally-commands"
+      ]
+    }
+  ]
+}

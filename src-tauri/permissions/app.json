@@ -1,0 +1,45 @@
+{
+  "permission": [
+    {
+      "identifier": "dayrally-commands",
+      "description": "Allow DayRally app commands",
+      "commands": {
+        "allow": [
+          "get_settings",
+          "set_workspace",
+          "open_workspace",
+          "test_notification",
+          "open_notification_settings",
+          "copy_text_native",
+          "list_task_overview",
+          "list_tags",
+          "create_task",
+          "update_task",
+          "update_task_status",
+          "delete_task",
+          "move_task",
+          "reorder_tasks",
+          "start_task_timer",
+          "stop_task_timer",
+          "list_timers",
+          "list_checkin_people",
+          "create_checkin_person",
+          "delete_checkin_person",
+          "list_checkins",
+          "create_checkin",
+          "update_checkin",
+          "delete_checkin",
+          "list_notes",
+          "list_note_folders",
+          "create_note_folder",
+          "delete_note_folder",
+          "create_note",
+          "update_note",
+          "delete_note",
+          "list_note_attachments",
+          "save_note_attachment"
+        ]
+      }
+    }
+  ]
+}

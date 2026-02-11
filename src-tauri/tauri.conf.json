@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DayRally",
+  "version": "0.1.0",
+  "identifier": "com.dayrally",
+  "app": {
+    "windows": [
+      {
+        "title": "DayRally",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "devtools": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": {
+          "allow": [
+            "$HOME/**",
+            "$TEMP/**"
+          ]
+        }
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg"],
+    "icon": ["icons/DayRally.icns"]
+  },
+  "build": {
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  }
+}
