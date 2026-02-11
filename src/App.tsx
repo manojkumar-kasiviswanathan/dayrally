@@ -886,6 +886,41 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const updateScale = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const scale = Math.min(1.2, Math.max(1, 0.85 + dpr * 0.15));
+      document.documentElement.style.setProperty("--ui-scale", scale.toFixed(3));
+    };
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
+  useEffect(() => {
+    const keyHandler = (event: KeyboardEvent) => {
+      const isZoomIn = (event.metaKey || event.ctrlKey) && (event.key === "=" || event.key === "+");
+      const isZoomOut = (event.metaKey || event.ctrlKey) && event.key === "-";
+      const isReset = (event.metaKey || event.ctrlKey) && event.key === "0";
+      if (!isZoomIn && !isZoomOut && !isReset) return;
+      event.preventDefault();
+      const current = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue("--ui-scale") || "1"
+      );
+      let next = current;
+      if (isZoomIn) next = current + 0.05;
+      if (isZoomOut) next = current - 0.05;
+      if (isReset) {
+        const dpr = window.devicePixelRatio || 1;
+        next = Math.min(1.2, Math.max(1, 0.85 + dpr * 0.15));
+      }
+      next = Math.min(1.35, Math.max(0.9, Number(next.toFixed(2))));
+      document.documentElement.style.setProperty("--ui-scale", String(next));
+    };
+    window.addEventListener("keydown", keyHandler);
+    return () => window.removeEventListener("keydown", keyHandler);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       refreshTimers().catch(() => undefined);
     }, 1000);

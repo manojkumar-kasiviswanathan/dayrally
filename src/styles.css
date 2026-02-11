@@ -15,6 +15,17 @@
   --font-body: "SF Pro Text", "Avenir Next", "Segoe UI Variable", "Segoe UI", sans-serif;
   --font-display: "SF Pro Display", "Avenir Next", "Segoe UI Variable", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  --ui-scale: 1;
+  --fs-body: 15px;
+  --fs-h1: 42px;
+  --fs-logo: 34px;
+  --fs-section: 20px;
+  --fs-panel: 20px;
+  --fs-task-title: 17px;
+  --fs-badge: 11px;
+  --fs-path: 12px;
+  --fs-note-title: 12px;
+  --fs-note-time: 9px;
 }
 
 :root[data-theme="light"] {
@@ -41,7 +52,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: calc(var(--fs-body) * var(--ui-scale));
   line-height: 1.4;
 }
 
@@ -102,7 +113,7 @@ textarea {
 }
 
 .logo {
-  font-size: 34px;
+  font-size: calc(var(--fs-logo) * var(--ui-scale));
   font-weight: 700;
   letter-spacing: -0.03em;
 }
@@ -165,7 +176,7 @@ textarea {
 }
 
 .page-header h1 {
-  font-size: 42px;
+  font-size: calc(var(--fs-h1) * var(--ui-scale));
   font-weight: 720;
 }
 
@@ -201,7 +212,7 @@ textarea {
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: calc(var(--fs-section) * var(--ui-scale));
   margin-bottom: 10px;
 }
 
@@ -213,7 +224,7 @@ textarea {
 .path {
   font-family: var(--font-mono);
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: calc(var(--fs-path) * var(--ui-scale));
 }
 
 .primary {
@@ -262,7 +273,7 @@ textarea {
 .panel-title {
   padding: 16px 18px;
   border-bottom: 1px solid var(--border);
-  font-size: 20px;
+  font-size: calc(var(--fs-panel) * var(--ui-scale));
   font-weight: 640;
 }
 
@@ -335,7 +346,7 @@ textarea {
 }
 
 .task-title {
-  font-size: 17px;
+  font-size: calc(var(--fs-task-title) * var(--ui-scale));
   font-weight: 630;
 }
 
@@ -353,7 +364,7 @@ textarea {
 .task-badge {
   border: 1px solid var(--border);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: calc(var(--fs-badge) * var(--ui-scale));
   color: var(--text-muted);
   padding: 2px 8px;
   background: var(--surface-soft);
@@ -1133,12 +1144,12 @@ textarea {
 
 .note-item-title {
   font-weight: 620;
-  font-size: 12px;
+  font-size: calc(var(--fs-note-title) * var(--ui-scale));
 }
 
 .note-item-time {
   color: var(--text-muted);
-  font-size: 9px;
+  font-size: calc(var(--fs-note-time) * var(--ui-scale));
 }
 
 .notes-editor-card {

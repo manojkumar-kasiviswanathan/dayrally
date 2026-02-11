@@ -1,6 +1,6 @@
 cask "dayrally" do
-  version "0.1.0"
-  sha256 "c355586eaa36bb11ef21e58a358bc7749021561566b111e0b7dd8331059bc992"
+  version "0.1.1"
+  sha256 "6a0c5cc299759d739075b979b876ff4c1f5f07981fbbd5f177a0f2f1ced1db7b"
 
   url "https://github.com/manojkumar-kasiviswanathan/dayrally/releases/download/v#{version}/DayRally_#{version}_aarch64.dmg"
   name "DayRally"
